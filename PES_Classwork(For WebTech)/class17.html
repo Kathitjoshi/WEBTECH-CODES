@@ -1,0 +1,170 @@
+<html>
+  <head>
+    <title>Class17</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- JQuery Tutorial -->
+    <style>
+      /* Add some basic styling to make the output more visually appealing */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        color: #00698f;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      li:last-child {
+        border-bottom: none;
+      }
+      div {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+      form {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+      input[type="text"], input[type="password"] {
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="header">jQuery Tutorial</h1>
+    <p class="updated">This paragraph has the class "updated".</p>
+    <table>
+      <tr>
+        <th>Cell 1</th>
+        <th>Cell 2</th>
+      </tr>
+      <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+      </tr>
+    </table>
+    <ul>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ul>
+    <div>This div is empty.</div>
+    <p>This paragraph contains the text "hello".</p>
+    <div>
+      <span>This span is inside a div.</span>
+    </div>
+    <form>
+      <input type="text" placeholder="Enter your name"/>
+      <input type="password" placeholder="Enter your password"/>
+      <input type="submit" value="Submit"/>
+    </form>
+    <p id="content">This paragraph will be replaced with the content of ajax.html.</p>
+    <script>
+      $(document).ready(function(){
+        // Selectors
+        $("#header").css("background-color", "blue"); 
+        $(".updated").css("color", "red"); 
+        $("table").css("border", "1px solid black"); 
+
+        // Basic Filters
+        $("li:first").css("background-color", "green"); 
+        $("li:last").css("background-color", "yellow"); 
+        $("li:even").css("background-color", "gray"); 
+
+        // Content Filters
+        $("div:empty").css("background-color", "pink"); 
+        $("p:contains('hello')").css("font-size", "24px"); 
+        $("div:has(span)").css("background-color", "orange"); 
+
+        // Attribute Filters
+        $("[href]").css("text-decoration", "underline"); 
+        $("[href='https://www.example.com']").css("color", "blue"); 
+        $("[href!='https://www.example.com']").css("color", "red"); 
+
+        // Forms
+        $("input:text").css("background-color", "lightgray"); 
+        $("input:submit").css("background-color", "green"); 
+        $("input:password").css("background-color", "yellow"); 
+
+        // DOM Manipulation
+        $("p").before("<span>Hello</span>"); 
+        $("p").after("<span>World!</span>"); 
+        $("p").append("<span>!</span>"); 
+
+        // Attributes
+        $("p").addClass("highlight"); 
+        $("p").css("font-size", "18px"); 
+        $("p").attr("title", "Tooltip"); 
+
+        // Events
+        $("p").click(function(){ 
+          alert("You clicked a paragraph!");
+        });
+
+        // Effects
+        $("p").fadeIn(3000); // fade in over 3 seconds
+        $("p").fadeOut(3000); // fade out over 3 seconds
+        $("p").fadeIn(3000); // fade in over 3 seconds
+        $("p").fadeOut(3000); // fade out over 3 seconds
+        $("p").slideDown(3000); // slide down over 3 seconds
+        $("p").slideUp(3000); // slide up over 3 seconds
+        $("p").animate({ opacity: 0.5 }, 3000); // animate opacity to 0.5 over 3 seconds
+        $("p").animate({ fontSize: "36px" }, 3000); // animate font size to 36px over 3 seconds
+
+        // Additional Events and Effects
+        // Bind and Unbind Events
+        $("li").bind("mouseenter", function(){
+          $(this).css("background-color", "lightblue");
+        }).bind("mouseleave", function(){
+          $(this).css("background-color", "");
+        });
+
+        $("li").unbind("mouseenter mouseleave"); // Unbind hover effects
+
+        // Using live() for handling dynamically added elements (older jQuery versions)
+        $("body").on("click", "li", function(){
+          alert("You clicked a list item!");
+        });
+
+        // Hide and Toggle effects
+        $("h1").click(function(){
+          $(this).hide();
+        });
+
+        $("h1").dblclick(function(){
+          $(this).toggle();
+        });
+
+    })
+       
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Class 9</title>
+</head>
+<body>
+</body>
+<!-- selection/iteration statements in JS -->
+<script>
+	// var a=prompt("enter a");
+	// if(a%2==0)
+	// 	console.log("even no");
+	// else
+	// 	console.log("odd no");
+
+	for(var i=0;i<10;i++)
+		console.log(i);
+	var k=1;
+	
+	while(k<10)
+	{
+		document.write(k*10,"\n");
+		k++;
+	}
+	var cars=["car1","car2","car3"];
+	cars.forEach(myfunc);
+	function myfunc(item,index,array)
+    {
+    	document.write(item);
+    }	
+</script>	
+</html>

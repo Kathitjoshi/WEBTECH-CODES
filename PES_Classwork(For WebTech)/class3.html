@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Class 3</title>
+</head>
+<body>
+	<!-- //Forms -->
+	<fieldset>
+		<legend>Login Form</legend>
+         <form method="get" target="_self" name="forms" action="class2.html"> <!---After pressing send ,we go to class 2.html webpage-->
+            <label for value= "username">Name:</label>
+      	<input type="text"  name="Name" placeholder="Please enter!" autofocus=" " required=" " maxlength=50/>
+      	<br/>
+      	<br/>
+      	<label for value="Address">Address:</label>
+            <textarea required=" " autofocus=" " placeholder="Please enter!" rows=3 cols=30></textarea>
+            <br/>
+            <br/>
+            <label for value="Gender">Gender:</label>
+            <input type="radio" value="Male" name="gender"/>Male
+            <input type="radio" value="Female" name="gender"/>Female
+            <input type="radio" value="Other" name="gender"/>Other
+            <br/>
+            <br/>
+            <p>Choose your skills:</p>
+            <input type="checkbox" value="C" checked=" " name="Skills"/>C
+             <input type="checkbox" value="Python"  name="Skills"/>Python
+ 		 <input type="checkbox" value="SQL"  name="Skills"/>SQL
+ 		 <br/>
+ 		 <br/>
+ 		 Password:<input type="password" name="pwd" autofocus =" " required=" "/>
+ 		 <br/>
+ 		 <br/>
+ 		 Photo(Self):<input type="file" name="file"/>
+ 		 <br/>
+ 		 <br/>
+ 		 Favorite sport:
+ 		 <select >
+ 		 	<option value="Cricket" >Cricket</option>
+ 		 	<option value="Football" >Football</option>
+ 		 	<option value="Basketball">Basketball</option>
+ 		 	<option value="Badminton">Badminton</option>
+
+
+ 		</select>
+ 		<br/>
+ 		<br/>
+ 		<!-- HTML 5 elements -->
+ 		<label for value="email">Email:</label>
+ 		<input type="email" name="email" autofocus =" " required =" "/>
+ 		<br/>
+ 		<br/>
+ 		Age:
+ 		<input type="number" name="number"/>
+ 		<br/>
+ 		<br/>
+ 		Rate your music knowledge:
+ 		<input type="range" name="range" min=0 max=100 step=10/>
+ 		<br/>
+ 		<br/>
+            Choose a color:
+            <input type="color" value="color" name="color"/>
+            <br/>
+ 		<br/>
+ 		Enter Web Address:
+ 		<input type="url" name="url"/>
+ 		<br/>
+ 		<br/>
+ 		Phone no:
+ 		<input type="tel" name="tel" placeholder="10digits only" pattern="[0-9][10]"/> <!----0-9 digits allowed and only 10 digits allowed--->
+ 	  	<br/> 
+ 		<br/>
+ 		Enter birthday:
+ 		<input type="date" name="date"/>  <!--- You can also use type as "month","week" etc... -->
+ 		<br/>
+ 		<br/>
+ 		Test time:
+ 		<input type="time" name="time" disabled=" "/> <!--- You can't use type as "hours","minutes" etc... -->
+ 		<br/>
+ 		<br/>
+      	<input type="submit" value="send"/>
+      	<input type="reset" value="reset"/>	
+         </form>	
+      </fieldset>	 
+</body>
+</html>

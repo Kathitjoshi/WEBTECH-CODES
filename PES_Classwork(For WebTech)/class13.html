@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class13</title>
+  <!-- Don't run it as video/audio not downloaded -->
+  <style>
+    /* Add some basic styling to the page */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #controls {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Audio and Video Player</h1>
+  <audio id="myAudio" controls>
+    <source src="audio.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+  <div id="audio-controls">
+    <button id="play-audio">Play Audio</button>
+    <button id="pause-audio">Pause Audio</button>
+    <button id="mute-audio">Mute Audio</button>
+    <button id="unmute-audio">Unmute Audio</button>
+  </div>
+  <video id="myVideo" width="640" height="480" controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div id="video-controls">
+    <button id="play-video">Play Video</button>
+    <button id="pause-video">Pause Video</button>
+    <button id="mute-video">Mute Video</button>
+    <button id="unmute-video">Unmute Video</button>
+  </div>
+  <div id="controls">
+    <button id="seek-audio">Seek Audio to 10 seconds</button>
+    <button id="seek-video">Seek Video to 10 seconds</button>
+  </div>
+
+  <script>
+    // Get the audio and video elements
+    const audio = document.getElementById('myAudio');
+    const video = document.getElementById('myVideo');
+
+    // Add event listeners to the buttons
+    document.getElementById('play-audio').addEventListener('click', () => {
+      audio.play();
+    });
+    document.getElementById('pause-audio').addEventListener('click', () => {
+      audio.pause();
+    });
+    document.getElementById('mute-audio').addEventListener('click', () => {
+      audio.muted = true;
+    });
+    document.getElementById('unmute-audio').addEventListener('click', () => {
+      audio.muted = false;
+    });
+
+    document.getElementById('play-video').addEventListener('click', () => {
+      video.play();
+    });
+    document.getElementById('pause-video').addEventListener('click', () => {
+      video.pause();
+    });
+    document.getElementById('mute-video').addEventListener('click', () => {
+      video.muted = true;
+    });
+    document.getElementById('unmute-video').addEventListener('click', () => {
+      video.muted = false;
+    });
+
+    document.getElementById('seek-audio').addEventListener('click', () => {
+      audio.currentTime = 10;
+    });
+    document.getElementById('seek-video').addEventListener('click', () => {
+      video.currentTime = 10;
+    });
+
+    // Add event listeners to the audio and video elements
+    audio.addEventListener('ended', () => {
+      console.log('Audio playback completed');
+    });
+    video.addEventListener('ended', () => {
+      console.log('Video playback completed');
+    });
+    audio.addEventListener('error', () => {
+      console.log('Audio playback error');
+    });
+    video.addEventListener('error', () => {
+      console.log('Video playback error');
+    });
+  </script>
+</body>
+</html>

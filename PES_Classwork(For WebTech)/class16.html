@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class16</title>
+  </head>
+  <body>
+    <h1>Geolocation Example</h1>
+    <p id="location"></p>
+    <script>
+      // Check if geolocation is supported
+      if (navigator.geolocation) {
+        // Get the current position
+        navigator.geolocation.getCurrentPosition
+        (
+          // Success callback
+          function(position) 
+          {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            const accuracy = position.coords.accuracy;
+
+            // Display the location
+            document.getElementById("location").innerHTML = `Latitude: ${latitude}, Longitude: ${longitude}, Accuracy: ${accuracy} meters`;
+          },
+          // Error callback
+          function(error) 
+          {
+            console.error("Error getting location:", error);
+          }
+        );
+      } 
+      else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+    </script>
+  </body>
+</html>

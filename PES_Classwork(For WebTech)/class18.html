@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class18</title>
+</head>
+<body>
+    <h1>Callback and Promise Integration</h1>
+</body>
+<script>
+    // A function that accepts a callback and invokes it after 2 seconds
+function processWithCallback(callback) {
+    setTimeout(() => {
+        console.log("Processed with callback.");
+        callback();
+    }, 2000);
+}
+
+// Callback function to pass to the main function
+function myCallback() {
+    console.log("Callback executed.");
+}
+
+// Invoke the function with the callback
+processWithCallback(myCallback);
+
+
+// Function that returns a promise
+function processWithPromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("Processed with promise.");
+            resolve("Promise resolved.");
+        }, 2000);
+    });
+}
+
+// Consuming the promise with .then and .catch
+processWithPromise()
+    .then((message) => {
+        console.log(message); // Logs "Promise resolved."
+    })
+    .catch((error) => {
+        console.log(error); // Handles any rejection
+    });
+
+</script>
+</html>

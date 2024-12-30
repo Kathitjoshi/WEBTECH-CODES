@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class14</title>
+  </head>
+  <!-- Canvas Example -->
+  <body>
+    <canvas id="myCanvas" width="400" height="200"></canvas>
+    <script>
+      console.log("JavaScript code executed");
+      let canvas = document.getElementById("myCanvas");
+      if (!canvas) {
+        console.error("Canvas element not found");
+      } else {
+        let ctx = canvas.getContext("2d");
+        if (!ctx) {
+          console.error("Failed to get 2D drawing context");
+        } else {
+          ctx.fillStyle = "yellow";
+          ctx.fillRect(10, 10, 50, 50);
+          ctx.moveTo(0,0);
+          ctx.lineTo(50,50);
+          ctx.strokeRect(10,10,50,50);
+          ctx.arc(50,50,50,0,2*Math.PI,true);
+          ctx.createRadialGradient(75, 75, 10, 75, 75, 50);
+          ctx.createLinearGradient(0, 0, 100, 0);
+          ctx.fillText("Hello", 10, 250);
+          ctx.strokeText("Hello", 10, 280);
+          console.log("Rectangle drawn on canvas");
+        }
+      }
+    </script>
+  </body>
+</html>

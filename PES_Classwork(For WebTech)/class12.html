@@ -1,0 +1,59 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class12</title>
+</head>
+<!-- Eg of DOMS and Events -->
+<body>
+    <p id="paragraph">Hello, World!</p>
+    <button id="button">Change Color</button>
+    <input id="input" type="text" placeholder="Type something...">
+    <form id="form">
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        // Get the paragraph, button, and input elements
+        const paragraph = document.getElementById('paragraph');
+        const button = document.getElementById('button');
+        const input = document.getElementById('input');
+
+        // Add an event listener to the button
+        button.addEventListener('click', () => {
+            // Change the text color of the paragraph
+            paragraph.style.color = 'blue';
+        });
+
+        // Add an event listener to the input element
+        input.addEventListener('keydown', (event) => {
+            // Log the key that was pressed
+            console.log(`You pressed the ${event.key} key`);
+        });
+
+        // Add an event listener to the paragraph
+        paragraph.addEventListener('mouseover', () => {
+            // Change the text color of the paragraph
+            paragraph.style.color = 'red';
+        });
+
+        // Add an event listener to the paragraph
+        paragraph.addEventListener('mouseout', () => {
+            // Change the text color of the paragraph
+            paragraph.style.color = 'black';
+        });
+
+        // Add an event listener to the form
+        const form = document.getElementById('form');
+        form.addEventListener('submit', (event) => {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            // Log a message to the console
+            console.log('Form submitted!');
+        });
+    </script>
+</body>
+</html>
